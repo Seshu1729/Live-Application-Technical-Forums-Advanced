@@ -82,7 +82,7 @@
                                 <a href="/home_page/delete_answer/{{ answer.id }}">delete</a>
                             </div>
                     {% endif %}
-                    {% if answer.answer_by_id ==  question_details.questioned_by_id or request.user.is_superuser %}
+                    {% if current_user_id ==  question_details.questioned_by_id or request.user.is_superuser %}
                         {% if answer.accepted_answer == 0 %}
                             <div class="col-md-2 col-md-offset-1">
                                 <a href="/home_page/view_question/{{ question_details.id }}/accept_answer/{{ answer.id }}">Accept</a>
